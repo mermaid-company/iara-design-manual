@@ -1,18 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Sidebar } from "@/components/Sidebar";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { metadata as siteMetadata } from "./metadata";
 
-export const metadata: Metadata = {
-  title: "IARA Brand Manual | Design System",
-  description:
-    "Design guidelines, typography, colors, and components for the IARA brand",
-  icons: {
-    icon: [
-      { url: "/assets/FAVICON.svg", type: "image/svg+xml" },
-    ],
-    apple: "/assets/FAVICON.svg",
-  },
+export const metadata: Metadata = siteMetadata;
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#002E10" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

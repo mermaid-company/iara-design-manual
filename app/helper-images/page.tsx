@@ -57,11 +57,26 @@ const contextImages = [
 
 // Bento grid images
 const bentoImages = [
-  { name: "Bento 01", src: "/assets/img01 - bento grid - iara assistente virtual.webp" },
-  { name: "Bento 02", src: "/assets/img02 - bento grid - iara assistente virtual.webp" },
-  { name: "Bento 03", src: "/assets/img03 - bento grid - iara assistente virtual.webp" },
-  { name: "Bento 04", src: "/assets/img04 - bento grid - iara assistente virtual.webp" },
-  { name: "Bento 05", src: "/assets/img05 - bento grid - iara assistente virtual.webp" },
+  {
+    name: "Bento 01",
+    src: "/assets/img01 - bento grid - iara assistente virtual.webp",
+  },
+  {
+    name: "Bento 02",
+    src: "/assets/img02 - bento grid - iara assistente virtual.webp",
+  },
+  {
+    name: "Bento 03",
+    src: "/assets/img03 - bento grid - iara assistente virtual.webp",
+  },
+  {
+    name: "Bento 04",
+    src: "/assets/img04 - bento grid - iara assistente virtual.webp",
+  },
+  {
+    name: "Bento 05",
+    src: "/assets/img05 - bento grid - iara assistente virtual.webp",
+  },
 ];
 
 // Floating icons used in landing page hero
@@ -118,9 +133,13 @@ export default function HelperImagesPage() {
               className="group rounded-xl border border-foreground/10 overflow-hidden 
                          hover:border-iara-verde-accent transition-all"
             >
-              <div className={`bg-iara-verde-base flex items-center justify-center p-4 relative ${
-                image.aspectRatio === "portrait" ? "aspect-[3/4]" : "aspect-video"
-              }`}>
+              <div
+                className={`bg-iara-verde-base flex items-center justify-center p-4 relative ${
+                  image.aspectRatio === "portrait"
+                    ? "aspect-[3/4]"
+                    : "aspect-video"
+                }`}
+              >
                 <Image
                   src={image.src}
                   alt={image.name}
@@ -143,9 +162,7 @@ export default function HelperImagesPage() {
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="font-display font-semibold">
-                  {image.name}
-                </h3>
+                <h3 className="font-display font-semibold">{image.name}</h3>
                 <p className="text-xs text-muted-foreground mt-1">
                   {image.description}
                 </p>
@@ -190,9 +207,7 @@ export default function HelperImagesPage() {
                 </div>
               </div>
               <div className="p-4">
-                <h3 className="font-display font-semibold">
-                  {image.name}
-                </h3>
+                <h3 className="font-display font-semibold">{image.name}</h3>
                 <p className="text-xs text-muted-foreground mt-1">
                   {image.description}
                 </p>
@@ -250,8 +265,10 @@ export default function HelperImagesPage() {
                 fill
                 className="object-cover group-hover:scale-105 transition-transform"
               />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
-                            flex items-center justify-center transition-opacity">
+              <div
+                className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                            flex items-center justify-center transition-opacity"
+              >
                 <Download className="w-6 h-6 text-white" />
               </div>
             </a>
@@ -278,8 +295,10 @@ export default function HelperImagesPage() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
-                            flex items-center justify-center transition-opacity rounded-full">
+              <div
+                className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                            flex items-center justify-center transition-opacity rounded-full"
+              >
                 <Download className="w-4 h-4 text-white" />
               </div>
             </a>
@@ -354,10 +373,14 @@ export default function HelperImagesPage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
-                          flex items-center justify-center transition-opacity">
-              <div className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
-                           font-display text-sm font-semibold">
+            <div
+              className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                          flex items-center justify-center transition-opacity"
+            >
+              <div
+                className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
+                           font-display text-sm font-semibold"
+              >
                 <Download className="w-4 h-4" />
                 BG Hero
               </div>
@@ -374,10 +397,14 @@ export default function HelperImagesPage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
-                          flex items-center justify-center transition-opacity">
-              <div className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
-                           font-display text-sm font-semibold">
+            <div
+              className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                          flex items-center justify-center transition-opacity"
+            >
+              <div
+                className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
+                           font-display text-sm font-semibold"
+              >
                 <Download className="w-4 h-4" />
                 Textura
               </div>
@@ -403,10 +430,14 @@ export default function HelperImagesPage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
-                          flex items-center justify-center transition-opacity">
-              <div className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
-                           font-display text-sm font-semibold">
+            <div
+              className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                          flex items-center justify-center transition-opacity"
+            >
+              <div
+                className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
+                           font-display text-sm font-semibold"
+              >
                 <Download className="w-4 h-4" />
                 meta-img.png
               </div>
@@ -423,10 +454,14 @@ export default function HelperImagesPage() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
-                          flex items-center justify-center transition-opacity">
-              <div className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
-                           font-display text-sm font-semibold">
+            <div
+              className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                          flex items-center justify-center transition-opacity"
+            >
+              <div
+                className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
+                           font-display text-sm font-semibold"
+              >
                 <Download className="w-4 h-4" />
                 meta-img.jpg
               </div>

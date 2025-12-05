@@ -7,17 +7,17 @@ import Image from "next/image";
 
 // The main logo variations (v1 is the primary)
 const mainLogos = [
-  { 
-    name: "Logo Principal (Fundo Claro)", 
-    file: "iara-brand-v1-lightmode", 
+  {
+    name: "Logo Principal (Fundo Claro)",
+    file: "iara-brand-v1-lightmode",
     darkBg: false,
-    description: "Use em fundos claros/brancos"
+    description: "Use em fundos claros/brancos",
   },
-  { 
-    name: "Logo Principal (Fundo Escuro)", 
-    file: "iara-brand-v1-darkmode", 
+  {
+    name: "Logo Principal (Fundo Escuro)",
+    file: "iara-brand-v1-darkmode",
     darkBg: true,
-    description: "Use em fundos escuros/verde IARA"
+    description: "Use em fundos escuros/verde IARA",
   },
 ];
 
@@ -73,7 +73,11 @@ export default function BrandingPage() {
                 height={80}
                 className="object-contain"
               />
-              <p className={`text-sm mt-6 ${logo.darkBg ? "text-white/70" : "text-muted-foreground"}`}>
+              <p
+                className={`text-sm mt-6 ${
+                  logo.darkBg ? "text-white/70" : "text-muted-foreground"
+                }`}
+              >
                 {logo.description}
               </p>
             </div>
@@ -109,9 +113,7 @@ export default function BrandingPage() {
               height={64}
               className="object-contain"
             />
-            <span className="text-xs mt-4 text-white/70">
-              Fundo Escuro
-            </span>
+            <span className="text-xs mt-4 text-white/70">Fundo Escuro</span>
           </div>
           {/* Accent - uses the original FAVICON with dark background */}
           <div className="bg-iara-verde-accent rounded-xl p-8 flex flex-col items-center justify-center">
