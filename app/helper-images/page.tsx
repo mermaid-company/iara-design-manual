@@ -1,55 +1,101 @@
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
 import Image from "next/image";
+import { Download } from "lucide-react";
 
+// Real available assets
 const helperImages = [
   {
-    name: "Avatar Principal",
-    description: "Avatar padrão da IARA para uso em chatbots e interfaces",
-    src: "/assets/AVATAR.webp",
-    category: "Avatar",
-  },
-  {
-    name: "Ícone Aplicativo",
-    description: "Ícone quadrado para aplicativos móveis e desktop",
-    src: "/assets/ICON.svg",
-    category: "Ícone",
-  },
-  {
     name: "Favicon",
-    description: "Favicon para navegadores e bookmarks",
+    description: "Favicon oficial para navegadores e bookmarks",
     src: "/assets/FAVICON.svg",
-    category: "Ícone",
-  },
-  {
-    name: "Assistente Humano",
-    description: "Representação visual quando um humano assume a conversa",
-    src: "/assets/ICON-HUMAN-ATTENDANT.svg",
     category: "Ícone",
   },
 ];
 
-const useCases = [
+// Hero/representational images
+const heroImages = [
   {
-    title: "Chat Widget",
-    description: "Use o avatar em widgets de chat para representar a IARA",
-    example: "Tamanho recomendado: 48x48px ou 64x64px",
+    name: "Personagem IARA Hero",
+    description: "Imagem principal da personagem IARA para seções hero",
+    src: "/assets/PERSONAGEM IARA HERO.webp",
+    aspectRatio: "landscape",
   },
   {
-    title: "Notificações Push",
-    description: "Use o ícone em notificações push de aplicativos",
-    example: "Tamanho recomendado: 192x192px",
+    name: "Personagem IARA Hero (v2)",
+    description: "Versão alternativa da personagem IARA",
+    src: "/assets/PERSONAGEM-IARA-HERO_A02.webp",
+    aspectRatio: "landscape",
   },
   {
-    title: "App Store",
-    description: "Use o ícone do aplicativo nas lojas de aplicativos",
-    example: "Tamanho recomendado: 1024x1024px",
+    name: "Personagem IARA Mobile",
+    description: "Versão otimizada para mobile",
+    src: "/assets/PERSONAGEM-IARA-HERO-mobile_A02.webp",
+    aspectRatio: "portrait",
   },
   {
-    title: "Redes Sociais",
-    description: "Use o avatar para perfis em redes sociais",
-    example: "Tamanho recomendado: 400x400px",
+    name: "Mão com Celular",
+    description: "Imagem de mão segurando celular com recorte",
+    src: "/assets/mao celular recorte.webp",
+    aspectRatio: "portrait",
   },
+];
+
+// Product context images
+const contextImages = [
+  {
+    name: "IARA para E-commerce",
+    description: "Imagem representando uso da IARA no contexto e-commerce",
+    src: "/assets/img ecommerce - iara assistente virtual.webp",
+  },
+  {
+    name: "IARA para SaaS",
+    description: "Imagem representando uso da IARA no contexto SaaS",
+    src: "/assets/img saas - iara assistente virtual.webp",
+  },
+];
+
+// Bento grid images
+const bentoImages = [
+  { name: "Bento 01", src: "/assets/img01 - bento grid - iara assistente virtual.webp" },
+  { name: "Bento 02", src: "/assets/img02 - bento grid - iara assistente virtual.webp" },
+  { name: "Bento 03", src: "/assets/img03 - bento grid - iara assistente virtual.webp" },
+  { name: "Bento 04", src: "/assets/img04 - bento grid - iara assistente virtual.webp" },
+  { name: "Bento 05", src: "/assets/img05 - bento grid - iara assistente virtual.webp" },
+];
+
+// Floating icons used in landing page hero
+const floatingIcons = [
+  { name: "Ícone Flutuante 00", src: "/assets/icone flutuante 00.webp" },
+  { name: "Ícone Flutuante 01", src: "/assets/icone flutuante 01.webp" },
+  { name: "Ícone Flutuante 02", src: "/assets/icone flutuante 02.webp" },
+  { name: "Ícone Flutuante 03", src: "/assets/icone flutuante 03.webp" },
+  { name: "Ícone Flutuante 04", src: "/assets/icone flutuante 04.webp" },
+  { name: "Ícone Flutuante 05", src: "/assets/icone flutuante 05.webp" },
+  { name: "Ícone Flutuante 06", src: "/assets/icone flutuante 06.webp" },
+  { name: "Ícone Flutuante 07", src: "/assets/icone flutuante 07.webp" },
+  { name: "Ícone Flutuante 08", src: "/assets/icone flutuante 08.webp" },
+  { name: "Ícone Flutuante 09", src: "/assets/icone flutuante 09.webp" },
+];
+
+// Avatars for chat assistants
+const avatars = [
+  { name: "Avatar 0", src: "/assets/avatars/assistant-0.png" },
+  { name: "Avatar 1", src: "/assets/avatars/assistant-1.png" },
+  { name: "Avatar 2", src: "/assets/avatars/assistant-2.png" },
+  { name: "Avatar 3", src: "/assets/avatars/assistant-3.png" },
+  { name: "Avatar 4", src: "/assets/avatars/assistant-4.png" },
+  { name: "Avatar 5", src: "/assets/avatars/assistant-5.png" },
+  { name: "Avatar 6", src: "/assets/avatars/assistant-6.png" },
+  { name: "Avatar 7", src: "/assets/avatars/assistant-7.png" },
+  { name: "Avatar 8", src: "/assets/avatars/assistant-8.png" },
+  { name: "Avatar 9", src: "/assets/avatars/assistant-9.png" },
+  { name: "Avatar 10", src: "/assets/avatars/assistant-10.png" },
+  { name: "Avatar 11", src: "/assets/avatars/assistant-11.png" },
+  { name: "Avatar 12", src: "/assets/avatars/assistant-12.png" },
+  { name: "Avatar 13", src: "/assets/avatars/assistant-13.png" },
+  { name: "Avatar 14", src: "/assets/avatars/assistant-14.png" },
+  { name: "Avatar 15", src: "/assets/avatars/assistant-15.png" },
 ];
 
 export default function HelperImagesPage() {
@@ -60,10 +106,191 @@ export default function HelperImagesPage() {
         description="Imagens auxiliares, avatares e recursos visuais para uso em diferentes contextos da marca IARA."
       />
 
-      {/* Galeria de Imagens */}
+      {/* Imagens Hero/Personagem */}
       <Section
-        title="Biblioteca de Imagens"
-        description="Todas as imagens auxiliares disponíveis para uso."
+        title="Imagens Principais"
+        description="Imagens da personagem IARA para uso em seções hero e destaque. Usadas na landing page e app de login."
+      >
+        <div className="grid md:grid-cols-2 gap-6">
+          {heroImages.map((image) => (
+            <div
+              key={image.name}
+              className="group rounded-xl border border-foreground/10 overflow-hidden 
+                         hover:border-iara-verde-accent transition-all"
+            >
+              <div className={`bg-iara-verde-base flex items-center justify-center p-4 relative ${
+                image.aspectRatio === "portrait" ? "aspect-[3/4]" : "aspect-video"
+              }`}>
+                <Image
+                  src={image.src}
+                  alt={image.name}
+                  fill
+                  className="object-contain"
+                />
+                <div
+                  className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 
+                               flex items-center justify-center transition-opacity"
+                >
+                  <a
+                    href={image.src}
+                    download
+                    className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
+                             font-display text-sm font-semibold"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download
+                  </a>
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="font-display font-semibold">
+                  {image.name}
+                </h3>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {image.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Imagens de Contexto */}
+      <Section
+        title="Imagens de Contexto"
+        description="Imagens que representam a IARA em diferentes contextos de uso."
+      >
+        <div className="grid md:grid-cols-2 gap-6">
+          {contextImages.map((image) => (
+            <div
+              key={image.name}
+              className="group rounded-xl border border-foreground/10 overflow-hidden 
+                         hover:border-iara-verde-accent transition-all"
+            >
+              <div className="aspect-video bg-muted flex items-center justify-center relative">
+                <Image
+                  src={image.src}
+                  alt={image.name}
+                  fill
+                  className="object-cover"
+                />
+                <div
+                  className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 
+                               flex items-center justify-center transition-opacity"
+                >
+                  <a
+                    href={image.src}
+                    download
+                    className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
+                             font-display text-sm font-semibold"
+                  >
+                    <Download className="w-4 h-4" />
+                    Download
+                  </a>
+                </div>
+              </div>
+              <div className="p-4">
+                <h3 className="font-display font-semibold">
+                  {image.name}
+                </h3>
+                <p className="text-xs text-muted-foreground mt-1">
+                  {image.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Ícones Flutuantes */}
+      <Section
+        title="Ícones Flutuantes"
+        description="Ícones decorativos usados na seção hero da landing page. Representam funcionalidades da IARA."
+      >
+        <div className="grid grid-cols-5 md:grid-cols-10 gap-4">
+          {floatingIcons.map((icon) => (
+            <a
+              key={icon.name}
+              href={icon.src}
+              download
+              className="group aspect-square bg-muted rounded-xl flex items-center justify-center p-2 
+                       hover:bg-iara-verde-accent/20 transition-colors relative overflow-hidden"
+            >
+              <Image
+                src={icon.src}
+                alt={icon.name}
+                width={60}
+                height={60}
+                className="object-contain"
+              />
+            </a>
+          ))}
+        </div>
+        <p className="text-sm text-muted-foreground mt-4">
+          Clique em qualquer ícone para fazer download.
+        </p>
+      </Section>
+
+      {/* Bento Grid Images */}
+      <Section
+        title="Imagens Bento Grid"
+        description="Imagens para uso em layouts bento grid na landing page."
+      >
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {bentoImages.map((image) => (
+            <a
+              key={image.name}
+              href={image.src}
+              download
+              className="group aspect-square bg-muted rounded-xl overflow-hidden relative"
+            >
+              <Image
+                src={image.src}
+                alt={image.name}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform"
+              />
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                            flex items-center justify-center transition-opacity">
+                <Download className="w-6 h-6 text-white" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      {/* Avatars */}
+      <Section
+        title="Avatares de Assistente"
+        description="Avatares para representar assistentes virtuais no chat. Use para diferentes personas ou variações."
+      >
+        <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
+          {avatars.map((avatar) => (
+            <a
+              key={avatar.name}
+              href={avatar.src}
+              download
+              className="group aspect-square bg-muted rounded-full overflow-hidden relative"
+            >
+              <Image
+                src={avatar.src}
+                alt={avatar.name}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                            flex items-center justify-center transition-opacity rounded-full">
+                <Download className="w-4 h-4 text-white" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      {/* Favicon e Ícones */}
+      <Section
+        title="Favicon & Ícones"
+        description="Ícones para navegadores, apps e contextos diversos."
       >
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {helperImages.map((image) => (
@@ -76,8 +303,8 @@ export default function HelperImagesPage() {
                 <Image
                   src={image.src}
                   alt={image.name}
-                  width={120}
-                  height={120}
+                  width={80}
+                  height={80}
                   className="object-contain"
                 />
                 <div
@@ -110,96 +337,100 @@ export default function HelperImagesPage() {
         </div>
       </Section>
 
-      {/* Avatar em Diferentes Tamanhos */}
+      {/* Background/Texturas */}
       <Section
-        title="Tamanhos do Avatar"
-        description="O avatar deve ser usado em tamanhos apropriados para cada contexto."
-      >
-        <div className="flex flex-wrap items-end gap-8">
-          {[128, 96, 64, 48, 32, 24].map((size) => (
-            <div key={size} className="text-center">
-              <div
-                className="bg-muted rounded-full flex items-center justify-center overflow-hidden mx-auto"
-                style={{ width: size, height: size }}
-              >
-                <Image
-                  src="/assets/AVATAR.webp"
-                  alt={`Avatar ${size}px`}
-                  width={size}
-                  height={size}
-                  className="object-cover"
-                />
-              </div>
-              <span className="text-xs text-muted-foreground mt-2 block">
-                {size}px
-              </span>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Casos de Uso */}
-      <Section
-        title="Casos de Uso"
-        description="Diretrizes para aplicação das imagens auxiliares."
+        title="Backgrounds & Texturas"
+        description="Imagens de fundo e texturas para uso em layouts."
       >
         <div className="grid md:grid-cols-2 gap-6">
-          {useCases.map((useCase) => (
-            <div
-              key={useCase.title}
-              className="p-6 rounded-xl border border-foreground/10"
-            >
-              <h3 className="font-display font-semibold text-lg mb-2">
-                {useCase.title}
-              </h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                {useCase.description}
-              </p>
-              <code className="text-xs bg-muted px-3 py-1 rounded-full">
-                {useCase.example}
-              </code>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* Imagens para Redes Sociais */}
-      <Section
-        title="Redes Sociais"
-        description="Templates e imagens otimizadas para redes sociais."
-      >
-        <div className="bg-muted rounded-xl p-8 text-center">
-          <div className="text-6xl mb-4">📱</div>
-          <h3 className="font-display text-xl font-semibold mb-2">Em Breve</h3>
-          <p className="text-muted-foreground">
-            Templates para posts, stories e capas de redes sociais serão
-            disponibilizados aqui.
-          </p>
-        </div>
-      </Section>
-
-      {/* Downloads em Lote */}
-      <Section
-        title="Downloads"
-        description="Baixe todas as imagens auxiliares de uma vez."
-      >
-        <div className="flex flex-wrap gap-4">
           <a
-            href="/assets/iara-helper-images.zip"
+            href="/assets/BG-hero.webp"
             download
-            className="inline-flex items-center gap-2 px-6 py-3 bg-iara-verde-base text-iara-branco 
-                       rounded-full font-display font-semibold hover:bg-iara-verde-escuro transition-colors"
+            className="group rounded-xl overflow-hidden relative aspect-video"
           >
-            <span>📦</span>
-            Baixar Todas (ZIP)
+            <Image
+              src="/assets/BG-hero.webp"
+              alt="Background Hero"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                          flex items-center justify-center transition-opacity">
+              <div className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
+                           font-display text-sm font-semibold">
+                <Download className="w-4 h-4" />
+                BG Hero
+              </div>
+            </div>
           </a>
           <a
-            href="/assets"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-foreground/20 
-                       rounded-full font-display font-semibold hover:border-iara-verde-accent transition-colors"
+            href="/assets/textura-bg.webp"
+            download
+            className="group rounded-xl overflow-hidden relative aspect-video"
           >
-            <span>📂</span>
-            Ver Pasta de Assets
+            <Image
+              src="/assets/textura-bg.webp"
+              alt="Textura Background"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                          flex items-center justify-center transition-opacity">
+              <div className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
+                           font-display text-sm font-semibold">
+                <Download className="w-4 h-4" />
+                Textura
+              </div>
+            </div>
+          </a>
+        </div>
+      </Section>
+
+      {/* Meta Images */}
+      <Section
+        title="Meta Images"
+        description="Imagens para compartilhamento em redes sociais (Open Graph, Twitter Cards)."
+      >
+        <div className="grid md:grid-cols-2 gap-6">
+          <a
+            href="/assets/meta-img.png"
+            download
+            className="group rounded-xl overflow-hidden relative aspect-video border border-foreground/10"
+          >
+            <Image
+              src="/assets/meta-img.png"
+              alt="Meta Image PNG"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                          flex items-center justify-center transition-opacity">
+              <div className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
+                           font-display text-sm font-semibold">
+                <Download className="w-4 h-4" />
+                meta-img.png
+              </div>
+            </div>
+          </a>
+          <a
+            href="/assets/meta-img.jpg"
+            download
+            className="group rounded-xl overflow-hidden relative aspect-video border border-foreground/10"
+          >
+            <Image
+              src="/assets/meta-img.jpg"
+              alt="Meta Image JPG"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 
+                          flex items-center justify-center transition-opacity">
+              <div className="flex items-center gap-2 px-4 py-2 bg-iara-verde-accent text-iara-verde-base rounded-full 
+                           font-display text-sm font-semibold">
+                <Download className="w-4 h-4" />
+                meta-img.jpg
+              </div>
+            </div>
           </a>
         </div>
       </Section>

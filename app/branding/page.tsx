@@ -2,11 +2,26 @@
 
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
-import { IaraLogo, IaraIcon, IaraFullLogo } from "@/components/IaraLogo";
-
 import { Download } from "lucide-react";
 import Image from "next/image";
 
+// The main logo variations (v1 is the primary)
+const mainLogos = [
+  { 
+    name: "Logo Principal (Fundo Claro)", 
+    file: "iara-brand-v1-lightmode", 
+    darkBg: false,
+    description: "Use em fundos claros/brancos"
+  },
+  { 
+    name: "Logo Principal (Fundo Escuro)", 
+    file: "iara-brand-v1-darkmode", 
+    darkBg: true,
+    description: "Use em fundos escuros/verde IARA"
+  },
+];
+
+// All logo variations for downloads
 const brandingAssets = [
   { name: "Logo v1 Light", file: "iara-brand-v1-lightmode", darkBg: false },
   { name: "Logo v1 Dark", file: "iara-brand-v1-darkmode", darkBg: true },
@@ -39,60 +54,86 @@ export default function BrandingPage() {
       {/* Logo Principal */}
       <Section
         title="Logotipo Principal"
-        description="O logotipo IARA deve ser utilizado como elemento principal de identificação da marca."
+        description="O logotipo IARA (v1) é a versão principal e deve ser utilizado como elemento principal de identificação da marca. Inclui o ícone com as ondas características e o nome IARA."
       >
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Light Background */}
-          <div className="bg-iara-branco rounded-xl p-12 flex items-center justify-center border border-foreground/10">
-            <IaraFullLogo className="w-64 h-auto text-iara-verde-base" />
-          </div>
-          {/* Dark Background */}
-          <div className="bg-iara-verde-base rounded-xl p-12 flex items-center justify-center">
-            <IaraFullLogo className="w-64 h-auto text-iara-branco" />
-          </div>
+          {mainLogos.map((logo) => (
+            <div
+              key={logo.file}
+              className={`rounded-xl p-12 flex flex-col items-center justify-center ${
+                logo.darkBg
+                  ? "bg-iara-verde-base"
+                  : "bg-white border border-foreground/10"
+              }`}
+            >
+              <Image
+                src={`/assets/branding/${logo.file}.svg`}
+                alt={logo.name}
+                width={280}
+                height={80}
+                className="object-contain"
+              />
+              <p className={`text-sm mt-6 ${logo.darkBg ? "text-white/70" : "text-muted-foreground"}`}>
+                {logo.description}
+              </p>
+            </div>
+          ))}
         </div>
       </Section>
 
-      {/* Ícone */}
+      {/* Ícone / App Icon */}
       <Section
-        title="Ícone"
-        description="O ícone pode ser usado isoladamente em contextos onde o espaço é limitado ou a marca já está estabelecida."
+        title="Ícone do Aplicativo"
+        description="O ícone com as ondas pode ser usado isoladamente em contextos onde o espaço é limitado ou a marca já está estabelecida (favicon, app icon, avatar)."
       >
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="bg-iara-branco rounded-xl p-8 flex flex-col items-center justify-center border border-foreground/10">
-            <IaraIcon className="w-16 h-16" />
+          {/* Fundo Claro - uses the original FAVICON with dark background */}
+          <div className="bg-white rounded-xl p-8 flex flex-col items-center justify-center border border-foreground/10">
+            <Image
+              src="/assets/FAVICON.svg"
+              alt="Ícone IARA"
+              width={64}
+              height={64}
+              className="object-contain rounded-xl"
+            />
             <span className="text-xs mt-4 text-muted-foreground">
               Fundo Claro
             </span>
           </div>
+          {/* Fundo Escuro - white waves on dark background */}
           <div className="bg-iara-verde-base rounded-xl p-8 flex flex-col items-center justify-center">
-            <IaraIcon className="w-16 h-16 text-iara-branco" />
-            <span className="text-xs mt-4 text-iara-branco/70">
+            <Image
+              src="/assets/FAVICON-light.svg"
+              alt="Ícone IARA"
+              width={64}
+              height={64}
+              className="object-contain"
+            />
+            <span className="text-xs mt-4 text-white/70">
               Fundo Escuro
             </span>
           </div>
+          {/* Accent - uses the original FAVICON with dark background */}
           <div className="bg-iara-verde-accent rounded-xl p-8 flex flex-col items-center justify-center">
-            <IaraIcon className="w-16 h-16 text-iara-verde-base" />
+            <Image
+              src="/assets/FAVICON.svg"
+              alt="Ícone IARA"
+              width={64}
+              height={64}
+              className="object-contain rounded-xl"
+            />
             <span className="text-xs mt-4 text-iara-verde-base/70">Accent</span>
           </div>
+          {/* Gradiente - white waves on gradient background */}
           <div className="bg-linear-to-br from-iara-verde-base to-iara-verde-escuro rounded-xl p-8 flex flex-col items-center justify-center">
-            <IaraIcon className="w-16 h-16 text-iara-branco" />
-            <span className="text-xs mt-4 text-iara-branco/70">Gradiente</span>
-          </div>
-        </div>
-      </Section>
-
-      {/* Wordmark */}
-      <Section
-        title="Wordmark"
-        description="A versão somente texto do logotipo para usos específicos."
-      >
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-iara-branco rounded-xl p-12 flex items-center justify-center border border-foreground/10">
-            <IaraLogo className="w-48 h-auto text-iara-verde-base" />
-          </div>
-          <div className="bg-iara-verde-base rounded-xl p-12 flex items-center justify-center">
-            <IaraLogo className="w-48 h-auto text-iara-branco" />
+            <Image
+              src="/assets/FAVICON-light.svg"
+              alt="Ícone IARA"
+              width={64}
+              height={64}
+              className="object-contain"
+            />
+            <span className="text-xs mt-4 text-white/70">Gradiente</span>
           </div>
         </div>
       </Section>
@@ -100,12 +141,18 @@ export default function BrandingPage() {
       {/* Área de Proteção */}
       <Section
         title="Área de Proteção"
-        description="Mantenha sempre uma área de respiro ao redor do logotipo. A medida mínima é o equivalente à altura do 'I' do logotipo."
+        description="Mantenha sempre uma área de respiro ao redor do logotipo. A medida mínima é o equivalente à altura do ícone."
       >
         <div className="bg-muted rounded-xl p-8">
           <div className="border-2 border-dashed border-iara-verde-accent p-8 rounded-lg inline-block">
             <div className="bg-iara-verde-base rounded-lg p-8">
-              <IaraFullLogo className="w-48 h-auto text-iara-branco" />
+              <Image
+                src="/assets/branding/iara-brand-v1-darkmode.svg"
+                alt="Logo IARA"
+                width={200}
+                height={60}
+                className="object-contain"
+              />
             </div>
           </div>
           <p className="mt-4 text-sm text-muted-foreground">
@@ -121,24 +168,43 @@ export default function BrandingPage() {
       >
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           <div className="bg-muted rounded-xl p-6 text-center">
-            <div className="opacity-50 grayscale mb-4">
-              <IaraIcon className="w-16 h-16 mx-auto text-red-500" />
+            <div className="h-16 flex items-center justify-center mb-4 grayscale opacity-50">
+              <Image
+                src="/assets/branding/iara-brand-v1-lightmode.svg"
+                alt="Não altere as cores"
+                width={100}
+                height={40}
+                className="object-contain hue-rotate-180"
+                style={{ filter: "hue-rotate(180deg) saturate(2)" }}
+              />
             </div>
             <p className="text-sm text-red-500 font-semibold">
               ❌ Não altere as cores
             </p>
           </div>
           <div className="bg-muted rounded-xl p-6 text-center">
-            <div className="scale-x-150 mb-4">
-              <IaraIcon className="w-16 h-16 mx-auto" />
+            <div className="h-16 flex items-center justify-center mb-4 scale-x-150">
+              <Image
+                src="/assets/branding/iara-brand-v1-lightmode.svg"
+                alt="Não distorça"
+                width={100}
+                height={40}
+                className="object-contain"
+              />
             </div>
             <p className="text-sm text-red-500 font-semibold">
               ❌ Não distorça
             </p>
           </div>
           <div className="bg-muted rounded-xl p-6 text-center">
-            <div className="rotate-45 mb-4">
-              <IaraIcon className="w-16 h-16 mx-auto" />
+            <div className="h-16 flex items-center justify-center mb-4">
+              <Image
+                src="/assets/branding/iara-brand-v1-lightmode.svg"
+                alt="Não rotacione"
+                width={100}
+                height={40}
+                className="object-contain rotate-45"
+              />
             </div>
             <p className="text-sm text-red-500 font-semibold">
               ❌ Não rotacione
@@ -150,7 +216,7 @@ export default function BrandingPage() {
       {/* Downloads */}
       <Section
         title="Downloads"
-        description="Baixe os arquivos do logotipo nos formatos disponíveis (SVG e PNG)."
+        description="Baixe os arquivos do logotipo nos formatos disponíveis (SVG e PNG). A versão v1 é a principal."
       >
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {brandingAssets.map((asset) => (
