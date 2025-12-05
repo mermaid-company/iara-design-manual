@@ -1,6 +1,32 @@
+"use client";
+
 import { PageHeader } from "@/components/PageHeader";
 import { Section } from "@/components/Section";
 import { IaraLogo, IaraIcon, IaraFullLogo } from "@/components/IaraLogo";
+
+import { Download } from "lucide-react";
+import Image from "next/image";
+
+const brandingAssets = [
+  { name: "Logo v1 Light", file: "iara-brand-v1-lightmode", darkBg: false },
+  { name: "Logo v1 Dark", file: "iara-brand-v1-darkmode", darkBg: true },
+  { name: "Logo v2 Light", file: "iara-brand-v2-lightmode", darkBg: false },
+  { name: "Logo v2 Dark", file: "iara-brand-v2-darkmode", darkBg: true },
+  { name: "Logo v3 Light", file: "iara-brand-v3-lightmode", darkBg: false },
+  { name: "Logo v3 Dark", file: "iara-brand-v3-darkmode", darkBg: true },
+  { name: "Logo v4 Light", file: "iara-brand-v4-lightmode", darkBg: false },
+  { name: "Logo v4 Dark", file: "iara-brand-v4-darkmode", darkBg: true },
+  { name: "Logo v5 Light", file: "iara-brand-v5-lightmode", darkBg: false },
+  { name: "Logo v5 Dark", file: "iara-brand-v5-darkmode", darkBg: true },
+  { name: "Logo v6 Light", file: "iara-brand-v6-lightmode", darkBg: false },
+  { name: "Logo v6 Dark", file: "iara-brand-v6-darkmode", darkBg: true },
+  { name: "Logo v7 Light", file: "iara-brand-v7-lightmode", darkBg: false },
+  { name: "Logo v7 Dark", file: "iara-brand-v7-darkmode", darkBg: true },
+  { name: "Logo v8 Light", file: "iara-brand-v8-lightmode", darkBg: false },
+  { name: "Logo v8 Dark", file: "iara-brand-v8-darkmode", darkBg: true },
+  { name: "Logo v9 Light", file: "iara-brand-v9-lightmode", darkBg: false },
+  { name: "Logo v9 Dark", file: "iara-brand-v9-darkmode", darkBg: true },
+];
 
 export default function BrandingPage() {
   return (
@@ -49,7 +75,7 @@ export default function BrandingPage() {
             <IaraIcon className="w-16 h-16 text-iara-verde-base" />
             <span className="text-xs mt-4 text-iara-verde-base/70">Accent</span>
           </div>
-          <div className="bg-gradient-to-br from-iara-verde-base to-iara-verde-escuro rounded-xl p-8 flex flex-col items-center justify-center">
+          <div className="bg-linear-to-br from-iara-verde-base to-iara-verde-escuro rounded-xl p-8 flex flex-col items-center justify-center">
             <IaraIcon className="w-16 h-16 text-iara-branco" />
             <span className="text-xs mt-4 text-iara-branco/70">Gradiente</span>
           </div>
@@ -124,22 +150,57 @@ export default function BrandingPage() {
       {/* Downloads */}
       <Section
         title="Downloads"
-        description="Baixe os arquivos do logotipo nos formatos disponíveis."
+        description="Baixe os arquivos do logotipo nos formatos disponíveis (SVG e PNG)."
       >
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {["SVG", "PNG", "PDF", "AI"].map((format) => (
-            <a
-              key={format}
-              href={`/assets/logo-iara.${format.toLowerCase()}`}
-              download
-              className="block p-4 rounded-xl border border-foreground/10 hover:border-iara-verde-accent 
-                         hover:bg-iara-verde-accent/10 transition-all text-center group"
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {brandingAssets.map((asset) => (
+            <div
+              key={asset.file}
+              className={`rounded-xl p-4 border ${
+                asset.darkBg
+                  ? "bg-iara-verde-base border-iara-verde-base"
+                  : "bg-white border-foreground/10"
+              }`}
             >
-              <div className="font-display text-2xl font-bold text-iara-verde-base group-hover:text-iara-verde-accent">
-                .{format}
+              <div className="h-20 flex items-center justify-center mb-4">
+                <Image
+                  src={`/assets/branding/${asset.file}.svg`}
+                  alt={asset.name}
+                  width={160}
+                  height={60}
+                  className="object-contain"
+                />
               </div>
-              <div className="text-xs text-muted-foreground mt-1">Download</div>
-            </a>
+              <p
+                className={`text-sm font-display mb-3 ${
+                  asset.darkBg ? "text-white" : "text-foreground"
+                }`}
+              >
+                {asset.name}
+              </p>
+              <div className="flex gap-2">
+                <a
+                  href={`/assets/branding/${asset.file}.svg`}
+                  download
+                  className="flex-1 flex items-center justify-center gap-1 px-3 py-2 rounded-lg 
+                             bg-iara-verde-accent text-iara-verde-base text-xs font-semibold
+                             hover:bg-iara-verde-accent/80 transition-colors"
+                >
+                  <Download className="w-3 h-3" />
+                  SVG
+                </a>
+                <a
+                  href={`/assets/branding/${asset.file}.png`}
+                  download
+                  className="flex-1 flex items-center justify-center gap-1 px-3 py-2 rounded-lg 
+                             bg-muted text-foreground text-xs font-semibold
+                             hover:bg-muted/80 transition-colors"
+                >
+                  <Download className="w-3 h-3" />
+                  PNG
+                </a>
+              </div>
+            </div>
           ))}
         </div>
       </Section>

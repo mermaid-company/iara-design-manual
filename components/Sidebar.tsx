@@ -6,12 +6,16 @@ import { useTheme } from "./ThemeProvider";
 import { IaraLogo } from "./IaraLogo";
 
 const navigation = [
-  { name: "Início", href: "/" },
-  { name: "Branding", href: "/branding" },
-  { name: "Helper Images", href: "/helper-images" },
-  { name: "Tipografia", href: "/typography" },
-  { name: "Cores", href: "/colors" },
-  { name: "Elementos", href: "/elements" },
+  { name: "Início", href: "/", section: "Geral" },
+  { name: "Branding", href: "/branding", section: "Identidade" },
+  { name: "Helper Images", href: "/helper-images", section: "Identidade" },
+  { name: "Tipografia", href: "/typography", section: "Design System" },
+  { name: "Cores", href: "/colors", section: "Design System" },
+  { name: "Ícones", href: "/icons", section: "Design System" },
+  { name: "Espaçamento", href: "/spacing", section: "Design System" },
+  { name: "Elementos", href: "/elements", section: "Design System" },
+  { name: "Social Media", href: "/social-media", section: "Conteúdo" },
+  { name: "Voz & Tom", href: "/voice-tone", section: "Conteúdo" },
 ];
 
 export function Sidebar() {
@@ -29,30 +33,41 @@ export function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 p-4">
-        <ul className="space-y-1">
-          {navigation.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <li key={item.name}>
-                <Link
-                  href={item.href}
-                  className={`
-                    block px-4 py-3 rounded-lg font-display text-sm uppercase tracking-wider
-                    transition-all duration-300 ease-out
-                    ${
-                      isActive
-                        ? "bg-iara-verde-accent text-iara-verde-base font-semibold"
-                        : "hover:bg-white/10 hover:translate-x-1"
-                    }
-                  `}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+      <nav className="flex-1 p-4 overflow-y-auto">
+        {/* Group navigation by section */}
+        {["Geral", "Identidade", "Design System", "Conteúdo"].map((section) => {
+          const items = navigation.filter((item) => item.section === section);
+          return (
+            <div key={section} className="mb-4">
+              <h3 className="px-4 py-2 text-[10px] uppercase tracking-widest opacity-50 font-display">
+                {section}
+              </h3>
+              <ul className="space-y-0.5">
+                {items.map((item) => {
+                  const isActive = pathname === item.href;
+                  return (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className={`
+                          block px-4 py-2 rounded-lg font-display text-sm uppercase tracking-wider
+                          transition-all duration-300 ease-out
+                          ${
+                            isActive
+                              ? "bg-iara-verde-accent text-iara-verde-base font-semibold"
+                              : "hover:bg-white/10 hover:translate-x-1"
+                          }
+                        `}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })}
       </nav>
 
       {/* Theme Toggle */}
@@ -74,6 +89,7 @@ export function Sidebar() {
       <div className="p-4 text-xs opacity-50 text-center">
         <p>© 2024 IARA</p>
         <p>Mermaid Company</p>
+        <p className="mt-2 font-mono text-[10px]">v1.0.0</p>
       </div>
     </aside>
   );
