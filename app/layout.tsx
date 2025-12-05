@@ -8,7 +8,10 @@ export const metadata: Metadata = {
   description:
     "Design guidelines, typography, colors, and components for the IARA brand",
   icons: {
-    icon: "/assets/FAVICON.svg",
+    icon: [
+      { url: "/assets/FAVICON.svg", type: "image/svg+xml" },
+    ],
+    apple: "/assets/FAVICON.svg",
   },
 };
 
