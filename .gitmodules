@@ -1,0 +1,6 @@
+[submodule "contrib/mermaid-app"]
+	path = contrib/mermaid-app
+	url = git@github.com:mermaid-company/mermaid-app.git
+[submodule "contrib/iara-landing-static"]
+	path = contrib/iara-landing-static
+	url = git@github.com:mermaid-company/iara-landing-static.git
