@@ -115,7 +115,7 @@ const avatars = [
 
 export default function HelperImagesPage() {
   return (
-    <div className="max-w-6xl">
+    <div className="max-w-6xl mx-auto">
       <PageHeader
         title="Helper Images"
         description="Imagens auxiliares, avatares e recursos visuais para uso em diferentes contextos da marca IARA."

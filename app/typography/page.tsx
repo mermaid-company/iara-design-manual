@@ -64,7 +64,7 @@ const textSizes = [
 
 export default function TypographyPage() {
   return (
-    <div className="max-w-6xl">
+    <div className="max-w-6xl mx-auto">
       <PageHeader
         title="Tipografia"
         description="Sistema tipográfico da IARA usando as famílias Funnel Display para títulos e Nunito Sans para corpo de texto."
@@ -75,20 +75,20 @@ export default function TypographyPage() {
         title="Famílias Tipográficas"
         description="Duas famílias complementares formam o sistema tipográfico."
       >
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
           {/* Funnel Display */}
-          <div className="p-8 rounded-xl border border-foreground/10">
+          <div className="p-4 sm:p-8 rounded-xl border border-foreground/10">
             <span className="text-xs text-iara-verde-accent font-semibold uppercase tracking-wider">
               Display
             </span>
-            <h3 className="font-display text-4xl font-bold mt-2 mb-4">
+            <h3 className="font-display text-2xl sm:text-4xl font-bold mt-2 mb-4">
               Funnel Display
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
               Utilizada para títulos, cabeçalhos e elementos de destaque.
               Transmite modernidade e sofisticação.
             </p>
-            <div className="font-display text-2xl tracking-wide">
+            <div className="font-display text-lg sm:text-2xl tracking-wide break-all">
               ABCDEFGHIJKLMNOPQRSTUVWXYZ
               <br />
               abcdefghijklmnopqrstuvwxyz
@@ -98,18 +98,18 @@ export default function TypographyPage() {
           </div>
 
           {/* Nunito Sans */}
-          <div className="p-8 rounded-xl border border-foreground/10">
+          <div className="p-4 sm:p-8 rounded-xl border border-foreground/10">
             <span className="text-xs text-iara-verde-accent font-semibold uppercase tracking-wider">
               Body
             </span>
-            <h3 className="font-body text-4xl font-bold mt-2 mb-4">
+            <h3 className="font-body text-2xl sm:text-4xl font-bold mt-2 mb-4">
               Nunito Sans
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-muted-foreground mb-4 sm:mb-6 text-sm sm:text-base">
               Utilizada para corpo de texto, parágrafos e elementos de
               interface. Oferece excelente legibilidade.
             </p>
-            <div className="font-body text-2xl">
+            <div className="font-body text-lg sm:text-2xl break-all">
               ABCDEFGHIJKLMNOPQRSTUVWXYZ
               <br />
               abcdefghijklmnopqrstuvwxyz

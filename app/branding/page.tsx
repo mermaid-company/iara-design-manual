@@ -45,7 +45,7 @@ const brandingAssets = [
 
 export default function BrandingPage() {
   return (
-    <div className="max-w-6xl">
+    <div className="max-w-6xl mx-auto">
       <PageHeader
         title="Branding"
         description="Logotipos, ícones e diretrizes de uso da marca IARA. Todos os recursos visuais que você precisa para comunicar a identidade da marca."
@@ -56,11 +56,11 @@ export default function BrandingPage() {
         title="Logotipo Principal"
         description="O logotipo IARA (v1) é a versão principal e deve ser utilizado como elemento principal de identificação da marca. Inclui o ícone com as ondas características e o nome IARA."
       >
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
           {mainLogos.map((logo) => (
             <div
               key={logo.file}
-              className={`rounded-xl p-12 flex flex-col items-center justify-center ${
+              className={`rounded-xl p-6 sm:p-12 flex flex-col items-center justify-center ${
                 logo.darkBg
                   ? "bg-iara-verde-base"
                   : "bg-white border border-foreground/10"
@@ -71,7 +71,7 @@ export default function BrandingPage() {
                 alt={logo.name}
                 width={280}
                 height={80}
-                className="object-contain"
+                className="object-contain w-full max-w-[280px]"
               />
               <p
                 className={`text-sm mt-6 ${

@@ -121,7 +121,7 @@ export default function ColorsPage() {
   const { theme } = useTheme();
 
   return (
-    <div className="max-w-6xl">
+    <div className="max-w-6xl mx-auto">
       <PageHeader
         title="Cores"
         description="Paleta de cores da IARA com tokens para tema claro e escuro. Cada cor foi cuidadosamente selecionada para transmitir a identidade da marca."

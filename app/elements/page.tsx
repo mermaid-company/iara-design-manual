@@ -8,7 +8,7 @@ export default function ElementsPage() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="max-w-6xl">
+    <div className="max-w-6xl mx-auto">
       <PageHeader
         title="Elementos"
         description="Componentes de interface, botões, cards e outros elementos do sistema de design IARA."
