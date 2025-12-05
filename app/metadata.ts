@@ -53,11 +53,11 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: `${siteConfig.url}/assets/meta-img.png`,
-        width: 1200,
-        height: 630,
-        alt: "IARA Brand Manual - Design System",
-        type: "image/png",
+        url: `${siteConfig.url}/assets/iara-login-hero.jpg`,
+        width: 1024,
+        height: 1024,
+        alt: "IARA - Assistente Virtual de IA",
+        type: "image/jpeg",
       },
     ],
   },
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: [`${siteConfig.url}/assets/meta-img.png`],
+    images: [`${siteConfig.url}/assets/iara-login-hero.jpg`],
     creator: "@iara_ia_br", // Update with actual Twitter handle
   },
 
