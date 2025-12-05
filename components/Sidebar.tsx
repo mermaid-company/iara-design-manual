@@ -43,28 +43,13 @@ export function Sidebar() {
 
   return (
     <>
-      {/* Mobile Menu Toggle Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-iara-verde-base text-iara-branco shadow-lg hover:bg-iara-verde-escuro transition-colors"
-        aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
-      >
-        {isOpen ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        ) : (
+      {/* Mobile Menu Toggle Button - Only show hamburger when closed */}
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-iara-verde-base text-iara-branco shadow-lg hover:bg-iara-verde-escuro transition-colors"
+          aria-label="Abrir menu"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -79,8 +64,8 @@ export function Sidebar() {
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
           </svg>
-        )}
-      </button>
+        </button>
+      )}
 
       {/* Mobile Backdrop */}
       {isOpen && (
@@ -99,6 +84,28 @@ export function Sidebar() {
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
         `}
       >
+        {/* Mobile Close Button - Inside sidebar */}
+        <button
+          onClick={() => setIsOpen(false)}
+          className="lg:hidden absolute top-4 right-4 p-2 rounded-lg hover:bg-white/10 transition-colors"
+          aria-label="Fechar menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-5 h-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
         {/* Logo */}
         <div className="p-6 border-b border-white/10">
           <Link href="/" className="block">
