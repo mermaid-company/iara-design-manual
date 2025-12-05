@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: "/assets/meta-img.png",
+        url: `${siteConfig.url}/assets/meta-img.png`,
         width: 1200,
         height: 630,
         alt: "IARA Brand Manual - Design System",
@@ -67,8 +67,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
-    images: ["/assets/meta-img.png"],
-    creator: "@iaboraai", // Update with actual Twitter handle
+    images: [`${siteConfig.url}/assets/meta-img.png`],
+    creator: "@iara_ia_br", // Update with actual Twitter handle
   },
 
   // Robots
