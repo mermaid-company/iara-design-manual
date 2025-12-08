@@ -54,20 +54,20 @@ export default function ElementsPage() {
             </h4>
             <div className="flex flex-wrap gap-4">
               <button
-                className="px-8 py-4 border-2 border-iara-verde-base text-iara-verde-base rounded-full font-display font-semibold 
-                               hover:bg-iara-verde-base hover:text-iara-branco transition-colors duration-300"
+                className="px-8 py-4 border-2 border-foreground text-foreground rounded-full font-display font-semibold 
+                               hover:bg-foreground hover:text-background transition-colors duration-300"
               >
                 Outline
               </button>
               <button
-                className="px-8 py-4 border-2 border-iara-verde-accent text-iara-verde-accent rounded-full font-display font-semibold 
+                className="px-8 py-4 border-2 border-iara-verde-accent text-iara-verde-accent dark:text-iara-verde-accent rounded-full font-display font-semibold 
                                hover:bg-iara-verde-accent hover:text-iara-verde-base transition-colors duration-300"
               >
                 Outline Accent
               </button>
               <button
-                className="px-8 py-4 text-iara-verde-base rounded-full font-display font-semibold 
-                               hover:bg-foreground/5 transition-colors duration-300"
+                className="px-8 py-4 text-foreground rounded-full font-display font-semibold 
+                               hover:bg-foreground/10 transition-colors duration-300"
               >
                 Ghost
               </button>
@@ -106,7 +106,7 @@ export default function ElementsPage() {
                 <span>💬</span>
                 Iniciar Chat
               </button>
-              <button className="inline-flex items-center gap-2 px-6 py-3 border-2 border-foreground/20 rounded-full font-display font-semibold">
+              <button className="inline-flex items-center gap-2 px-6 py-3 border-2 border-foreground/30 text-foreground rounded-full font-display font-semibold hover:border-foreground/50 transition-colors">
                 Download
                 <span>↓</span>
               </button>
@@ -166,8 +166,8 @@ export default function ElementsPage() {
           </div>
 
           {/* Feature Card */}
-          <div className="p-6 rounded-xl border border-iara-verde-accent bg-iara-verde-accent/10">
-            <span className="text-xs text-iara-verde-accent font-semibold uppercase tracking-wider">
+          <div className="p-6 rounded-xl border border-iara-verde-accent bg-iara-verde-accent/10 dark:bg-iara-verde-accent/20">
+            <span className="text-xs text-iara-verde-accent-escuro dark:text-iara-verde-accent font-semibold uppercase tracking-wider">
               Destaque
             </span>
             <h4 className="font-display font-semibold text-lg mt-2 mb-2">
@@ -260,16 +260,16 @@ export default function ElementsPage() {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <span className="px-3 py-1 bg-green-500/20 text-green-600 rounded-full text-sm font-semibold">
+            <span className="px-3 py-1 bg-green-500/20 text-green-700 dark:text-green-400 rounded-full text-sm font-semibold">
               ✓ Sucesso
             </span>
-            <span className="px-3 py-1 bg-yellow-500/20 text-yellow-600 rounded-full text-sm font-semibold">
+            <span className="px-3 py-1 bg-yellow-500/20 text-yellow-700 dark:text-yellow-400 rounded-full text-sm font-semibold">
               ⚠ Aviso
             </span>
-            <span className="px-3 py-1 bg-red-500/20 text-red-600 rounded-full text-sm font-semibold">
+            <span className="px-3 py-1 bg-red-500/20 text-red-700 dark:text-red-400 rounded-full text-sm font-semibold">
               ✗ Erro
             </span>
-            <span className="px-3 py-1 bg-blue-500/20 text-blue-600 rounded-full text-sm font-semibold">
+            <span className="px-3 py-1 bg-blue-500/20 text-blue-700 dark:text-blue-400 rounded-full text-sm font-semibold">
               ℹ Info
             </span>
           </div>
@@ -315,41 +315,49 @@ export default function ElementsPage() {
         description="Mensagens de feedback e notificações."
       >
         <div className="space-y-4">
-          <div className="p-4 rounded-xl bg-green-500/10 border border-green-500/30 flex items-start gap-3">
-            <span className="text-green-500">✓</span>
+          <div className="p-4 rounded-xl bg-green-500/10 dark:bg-green-500/20 border border-green-500/30 flex items-start gap-3">
+            <span className="text-green-600 dark:text-green-400">✓</span>
             <div>
-              <h4 className="font-semibold text-green-600">Sucesso</h4>
-              <p className="text-sm text-green-600/80">
+              <h4 className="font-semibold text-green-700 dark:text-green-400">
+                Sucesso
+              </h4>
+              <p className="text-sm text-green-700/80 dark:text-green-400/80">
                 Operação realizada com sucesso!
               </p>
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-start gap-3">
-            <span className="text-blue-500">ℹ</span>
+          <div className="p-4 rounded-xl bg-blue-500/10 dark:bg-blue-500/20 border border-blue-500/30 flex items-start gap-3">
+            <span className="text-blue-600 dark:text-blue-400">ℹ</span>
             <div>
-              <h4 className="font-semibold text-blue-600">Informação</h4>
-              <p className="text-sm text-blue-600/80">
+              <h4 className="font-semibold text-blue-700 dark:text-blue-400">
+                Informação
+              </h4>
+              <p className="text-sm text-blue-700/80 dark:text-blue-400/80">
                 Uma informação importante para você.
               </p>
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-yellow-500/10 border border-yellow-500/30 flex items-start gap-3">
-            <span className="text-yellow-500">⚠</span>
+          <div className="p-4 rounded-xl bg-yellow-500/10 dark:bg-yellow-500/20 border border-yellow-500/30 flex items-start gap-3">
+            <span className="text-yellow-600 dark:text-yellow-400">⚠</span>
             <div>
-              <h4 className="font-semibold text-yellow-600">Atenção</h4>
-              <p className="text-sm text-yellow-600/80">
+              <h4 className="font-semibold text-yellow-700 dark:text-yellow-400">
+                Atenção
+              </h4>
+              <p className="text-sm text-yellow-700/80 dark:text-yellow-400/80">
                 Atenção! Verifique as informações.
               </p>
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30 flex items-start gap-3">
-            <span className="text-red-500">✗</span>
+          <div className="p-4 rounded-xl bg-red-500/10 dark:bg-red-500/20 border border-red-500/30 flex items-start gap-3">
+            <span className="text-red-600 dark:text-red-400">✗</span>
             <div>
-              <h4 className="font-semibold text-red-600">Erro</h4>
-              <p className="text-sm text-red-600/80">
+              <h4 className="font-semibold text-red-700 dark:text-red-400">
+                Erro
+              </h4>
+              <p className="text-sm text-red-700/80 dark:text-red-400/80">
                 Ocorreu um erro. Tente novamente.
               </p>
             </div>
@@ -375,7 +383,7 @@ export default function ElementsPage() {
               ].map((item) => (
                 <div key={item.name} className="flex items-center gap-4">
                   <div
-                    className="w-16 h-16 bg-iara-verde-base"
+                    className="w-16 h-16 bg-iara-verde-accent"
                     style={{ borderRadius: item.value }}
                   />
                   <div>
@@ -438,8 +446,8 @@ transition-transform duration-300 ease-out`}</pre>
             Color Transition
           </button>
           <button
-            className="px-6 py-3 border-2 border-foreground/20 rounded-full font-semibold
-                           transition-all duration-300 hover:translate-x-2"
+            className="px-6 py-3 border-2 border-foreground/30 text-foreground rounded-full font-semibold
+                           transition-all duration-300 hover:translate-x-2 hover:border-foreground/50"
           >
             Translate X →
           </button>

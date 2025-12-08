@@ -209,10 +209,10 @@ export default function SocialMediaPage() {
           {platformFormats.map((format) => (
             <div
               key={format.platform}
-              className="p-4 bg-muted/30 rounded-xl border border-muted flex items-center gap-4"
+              className="p-4 bg-muted/30 dark:bg-muted/50 rounded-xl border border-muted flex items-center gap-4"
             >
-              <div className="w-12 h-12 bg-iara-verde-base/10 rounded-lg flex items-center justify-center">
-                <format.icon className="w-6 h-6 text-iara-verde-base" />
+              <div className="w-12 h-12 bg-iara-verde-base/10 dark:bg-iara-verde-accent/20 rounded-lg flex items-center justify-center">
+                <format.icon className="w-6 h-6 text-iara-verde-base dark:text-iara-verde-accent" />
               </div>
               <div>
                 <h4 className="font-display font-semibold text-sm">
@@ -221,7 +221,9 @@ export default function SocialMediaPage() {
                 <p className="text-xs text-muted-foreground">
                   {format.dimensions}
                 </p>
-                <p className="text-xs text-iara-verde-accent">{format.ratio}</p>
+                <p className="text-xs text-iara-verde-accent-escuro dark:text-iara-verde-accent font-semibold">
+                  {format.ratio}
+                </p>
               </div>
             </div>
           ))}

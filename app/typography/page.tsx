@@ -207,11 +207,11 @@ export default function TypographyPage() {
         description="Diretrizes para uso correto da tipografia."
       >
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 rounded-xl bg-green-500/10 border border-green-500/30">
-            <h4 className="font-display font-semibold text-green-600 mb-4">
+          <div className="p-6 rounded-xl bg-green-500/10 dark:bg-green-500/20 border border-green-500/30">
+            <h4 className="font-display font-semibold text-green-700 dark:text-green-400 mb-4">
               ✓ Faça
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-green-800 dark:text-green-300">
               <li>• Use Funnel Display para títulos e CTAs</li>
               <li>• Use Nunito Sans para corpo de texto</li>
               <li>• Mantenha contraste adequado (4.5:1 mínimo)</li>
@@ -219,11 +219,11 @@ export default function TypographyPage() {
               <li>• Prefira tamanhos fluidos (clamp)</li>
             </ul>
           </div>
-          <div className="p-6 rounded-xl bg-red-500/10 border border-red-500/30">
-            <h4 className="font-display font-semibold text-red-600 mb-4">
+          <div className="p-6 rounded-xl bg-red-500/10 dark:bg-red-500/20 border border-red-500/30">
+            <h4 className="font-display font-semibold text-red-700 dark:text-red-400 mb-4">
               ✗ Evite
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-red-800 dark:text-red-300">
               <li>• Misturar muitos pesos diferentes</li>
               <li>• Usar texto menor que 12px</li>
               <li>• Longos blocos de texto em display</li>
@@ -248,7 +248,7 @@ export default function TypographyPage() {
           <a
             href="/fonts/NunitoSans.zip"
             download
-            className="inline-flex items-center gap-2 px-6 py-3 border border-foreground/20 
+            className="inline-flex items-center gap-2 px-6 py-3 border-2 border-foreground/30 
                        rounded-full font-display font-semibold hover:border-iara-verde-accent transition-colors"
           >
             Nunito Sans (.ttf)

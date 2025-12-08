@@ -440,11 +440,11 @@ export default function IconsPage() {
       {/* Guidelines */}
       <Section title="Diretrizes" description="Boas práticas de uso.">
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 bg-muted/30 rounded-xl">
-            <h4 className="font-display font-semibold mb-4 text-iara-verde-accent">
+          <div className="p-6 bg-green-500/10 dark:bg-green-500/20 rounded-xl border border-green-500/30">
+            <h4 className="font-display font-semibold mb-4 text-green-700 dark:text-green-400">
               ✓ Faça
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-green-800 dark:text-green-300">
               <li>• Use tamanhos consistentes (16, 20, 24px)</li>
               <li>• Mantenha strokeWidth em 2 para consistência</li>
               <li>• Use cores do design system</li>
@@ -452,11 +452,11 @@ export default function IconsPage() {
               <li>• Combine com texto quando necessário</li>
             </ul>
           </div>
-          <div className="p-6 bg-muted/30 rounded-xl">
-            <h4 className="font-display font-semibold mb-4 text-red-400">
+          <div className="p-6 bg-red-500/10 dark:bg-red-500/20 rounded-xl border border-red-500/30">
+            <h4 className="font-display font-semibold mb-4 text-red-700 dark:text-red-400">
               ✗ Evite
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-red-800 dark:text-red-300">
               <li>• Misturar bibliotecas de ícones</li>
               <li>• Usar tamanhos muito pequenos (&lt;16px)</li>
               <li>• Ícones como único indicador de ação</li>

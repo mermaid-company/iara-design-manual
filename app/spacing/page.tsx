@@ -202,7 +202,7 @@ export default function SpacingPage() {
                 }).map((_, i) => (
                   <div
                     key={i}
-                    className="h-12 bg-iara-verde-accent/20 border-2 border-dashed border-iara-verde-accent rounded flex items-center justify-center text-xs font-mono"
+                    className="h-12 bg-iara-verde-accent/20 border-2 border-dashed border-iara-verde-accent dark:border-iara-verde-accent rounded flex items-center justify-center text-xs font-mono text-foreground"
                   >
                     {i + 1}
                   </div>
@@ -260,22 +260,22 @@ export default function SpacingPage() {
         description="Guia rápido de espaçamento."
       >
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 bg-muted/30 rounded-xl">
-            <h4 className="font-display font-semibold mb-4 text-iara-verde-accent">
+          <div className="p-6 bg-green-500/10 dark:bg-green-500/20 rounded-xl border border-green-500/30">
+            <h4 className="font-display font-semibold mb-4 text-green-700 dark:text-green-400">
               ✓ Faça
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-green-800 dark:text-green-300">
               <li>• Use tokens de espaçamento consistentes</li>
               <li>• Mantenha múltiplos de 4px</li>
               <li>• Use espaçamento fluido para responsividade</li>
               <li>• Agrupe elementos relacionados com menos espaço</li>
             </ul>
           </div>
-          <div className="p-6 bg-muted/30 rounded-xl">
-            <h4 className="font-display font-semibold mb-4 text-red-400">
+          <div className="p-6 bg-red-500/10 dark:bg-red-500/20 rounded-xl border border-red-500/30">
+            <h4 className="font-display font-semibold mb-4 text-red-700 dark:text-red-400">
               ✗ Evite
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm text-red-800 dark:text-red-300">
               <li>• Valores arbitrários (23px, 17px)</li>
               <li>• Espaçamento inconsistente entre páginas</li>
               <li>• Misturar unidades (px com rem)</li>

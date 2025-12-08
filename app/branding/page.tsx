@@ -180,7 +180,7 @@ export default function BrandingPage() {
                 style={{ filter: "hue-rotate(180deg) saturate(2)" }}
               />
             </div>
-            <p className="text-sm text-red-500 font-semibold">
+            <p className="text-sm text-red-600 dark:text-red-400 font-semibold">
               ❌ Não altere as cores
             </p>
           </div>
@@ -194,7 +194,7 @@ export default function BrandingPage() {
                 className="object-contain"
               />
             </div>
-            <p className="text-sm text-red-500 font-semibold">
+            <p className="text-sm text-red-600 dark:text-red-400 font-semibold">
               ❌ Não distorça
             </p>
           </div>
@@ -208,7 +208,7 @@ export default function BrandingPage() {
                 className="object-contain rotate-45"
               />
             </div>
-            <p className="text-sm text-red-500 font-semibold">
+            <p className="text-sm text-red-600 dark:text-red-400 font-semibold">
               ❌ Não rotacione
             </p>
           </div>
@@ -226,8 +226,8 @@ export default function BrandingPage() {
               key={asset.file}
               className={`rounded-xl p-4 border ${
                 asset.darkBg
-                  ? "bg-iara-verde-base border-iara-verde-base"
-                  : "bg-white border-foreground/10"
+                  ? "bg-iara-verde-base border-iara-verde-accent/30"
+                  : "bg-white dark:bg-muted border-foreground/10"
               }`}
             >
               <div className="h-20 flex items-center justify-center mb-4">
@@ -241,7 +241,9 @@ export default function BrandingPage() {
               </div>
               <p
                 className={`text-sm font-display mb-3 ${
-                  asset.darkBg ? "text-white" : "text-foreground"
+                  asset.darkBg
+                    ? "text-white"
+                    : "text-iara-verde-base dark:text-iara-branco"
                 }`}
               >
                 {asset.name}

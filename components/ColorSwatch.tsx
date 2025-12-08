@@ -36,6 +36,7 @@ export function ColorSwatch({
           transition-transform duration-300 
           group-hover:scale-105 group-hover:shadow-lg
           cursor-pointer relative overflow-hidden
+          border-2 border-foreground/10
         `}
         style={{ backgroundColor: value }}
         onClick={() => copyToClipboard(hex || value)}

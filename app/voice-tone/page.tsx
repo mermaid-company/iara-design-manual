@@ -205,7 +205,7 @@ export default function VoiceTonePage() {
               </div>
               <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-muted">
                 <div className="p-4">
-                  <div className="flex items-center gap-2 mb-3 text-green-500">
+                  <div className="flex items-center gap-2 mb-3 text-green-600 dark:text-green-400">
                     <ThumbsUp className="w-4 h-4" />
                     <span className="text-xs font-semibold uppercase">
                       Fazer
@@ -214,7 +214,7 @@ export default function VoiceTonePage() {
                   <p className="text-sm">&ldquo;{example.good}&rdquo;</p>
                 </div>
                 <div className="p-4">
-                  <div className="flex items-center gap-2 mb-3 text-red-400">
+                  <div className="flex items-center gap-2 mb-3 text-red-600 dark:text-red-400">
                     <ThumbsDown className="w-4 h-4" />
                     <span className="text-xs font-semibold uppercase">
                       Evitar
@@ -243,11 +243,11 @@ export default function VoiceTonePage() {
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-muted">
-                      <th className="text-left py-2 px-4 text-sm text-green-500">
+                      <th className="text-left py-2 px-4 text-sm text-green-600 dark:text-green-400">
                         <ThumbsUp className="w-4 h-4 inline mr-2" />
                         Preferir
                       </th>
-                      <th className="text-left py-2 px-4 text-sm text-red-400">
+                      <th className="text-left py-2 px-4 text-sm text-red-600 dark:text-red-400">
                         <ThumbsDown className="w-4 h-4 inline mr-2" />
                         Evitar
                       </th>
