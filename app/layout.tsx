@@ -23,6 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
+      {process.env.NEXT_PUBLIC_PREVIEW_NOINDEX === "1" ? (
+        <head>
+          <meta name="robots" content="noindex, nofollow" />
+        </head>
+      ) : null}
       <body className="antialiased overflow-x-hidden">
         <ThemeProvider>
           <div className="flex min-h-screen">
